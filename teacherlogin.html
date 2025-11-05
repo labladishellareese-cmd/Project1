@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Log In - Collgo</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for the password toggle icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    
+    <div class="page-content-wrapper login-page-layout">
+
+        <!-- Top Navigation -->
+        <header class="login-navbar">
+            <nav>
+                <!-- Note: 'nav-link' is a general style, 'nav-active' is used for the current page -->
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Our Contact</a>
+            </nav>
+        </header>
+
+        <section class="login-form-container">
+            <!-- Title Section -->
+            <h1 class="login-title">
+                <span class="login-dark">TEACHER</span>
+                <span class="login-highlight">LOG IN</span>
+            </h1>
+
+            <!-- The main two-column form -->
+            <form class="login-form" action="#" method="POST">
+                
+                <!-- Left Column (E-mail and Password) -->
+                <div class="form-group-col">
+                    <!-- E-mail Address -->
+                    <div class="form-group-row">
+                        <label for="email" class="form-label">E-mail Address</label>
+                        <div class="form-input-container">
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Insert your E-mail Address here" required>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group-row">
+                        <label for="password" class="form-label">Password *</label>
+                        <div class="form-input-container password-input-container">
+                            <input type="password" id="password" name="password" class="form-input" placeholder="Insert your Password here" required>
+                            <!-- Eye icon for password toggle -->
+                            <i class="fas fa-eye password-toggle-icon" onclick="togglePasswordVisibility('password', this)"></i>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- Right Column (ID Number and Log In Button) -->
+                <div class="form-group-col">
+                    <!-- ID Number -->
+                    <div class="form-group-row">
+                        <label for="id_number" class="form-label">ID Number</label>
+                        <div class="form-input-container">
+                            <input type="text" id="id_number" name="id_number" class="form-input" placeholder="Insert your ID Number here" required>
+                        </div>
+                    </div>
+
+                    <!-- Log In Button -->
+                    <div class="login-button-container">
+                        <button type="submit" class="login-form-button">Log In</button>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+        
+    </div>
+    <div class="header-footer-bar"></div>
+    <script>
+        function togglePasswordVisibility(id, icon) {
+            const input = document.getElementById(id);
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = "password";
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,727 @@
+/* Import a font similar to the one used in the design (e.g., Poppins or Montserrat) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"); /* Added for password icons */
+
+
+:root {
+    /* Define colors from the design */
+    --color-yellow: #FFC72C; 
+    --color-dark-blue: #1A237E; 
+    --color-text-link: #424242; 
+    --color-background-white: #F8F8F8; 
+    --color-bar-black: #1A1A1A; 
+    --color-light-gray: #E0E0E0; /* For form inputs */
+    --color-form-label: #424242; /* For form labels */
+}
+
+/* Base styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: var(--color-background-white);
+    display: flex;
+    flex-direction: column; 
+}
+
+/* --- Top/Bottom Black Bars --- */
+.header-footer-bar {
+    background-color: var(--color-bar-black);
+    width: 100%;
+    height: 30px; 
+    flex-shrink: 0; 
+}
+
+/* --- Main Content Wrapper --- */
+.page-content-wrapper {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    padding: 0 5%; 
+}
+
+/* --- Navigation Bar (index, about, contact) --- */
+.navbar {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    padding: 40px 0 0 0; 
+    box-sizing: border-box;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-text-link);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 50px; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover Effect for non-active links */
+.nav-link:hover {
+    background-color: var(--color-yellow);
+    color: #000;
+}
+
+.nav-active {
+    background-color: var(--color-yellow);
+    color: #000;
+    padding: 8px 15px;
+}
+
+/* --- Hero Section (Main Text Container for index/about/contact) --- */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center; 
+    max-width: 700px;
+    margin: auto 0; 
+    padding-bottom: 50px; 
+}
+
+/* --- Landing Page Text (index.html) --- */
+.tagline-small {
+    font-size: 20px;
+    color: var(--color-text-link);
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.tagline-brand {
+    font-weight: 800;
+    color: var(--color-yellow);
+}
+
+.tagline-main {
+    font-size: 72px; 
+    color: var(--color-dark-blue);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 40px 0;
+}
+
+/* --- About Page Specific Styles (about.html) --- */
+.about-title {
+    font-size: 72px;
+    color: var(--color-dark-blue);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 20px 0; 
+}
+
+.about-description {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-text-link);
+    max-width: 600px; 
+    margin: 0 auto 50px auto; 
+}
+
+/* --- Contact Page Specific Styles (contact.html) --- */
+.contact-title {
+    font-size: 72px;
+    color: var(--color-dark-blue); 
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 20px 0; 
+}
+
+.contact-description {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-text-link); 
+    max-width: 600px; 
+    margin: 0 auto 50px auto; 
+}
+
+/* --- SIGN UP Button (index/about) --- */
+.signup-button {
+    background-color: var(--color-yellow); 
+    color: #000;
+    border: none;
+    padding: 15px 40px; 
+    border-radius: 50px;
+    font-size: 20px; 
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+    text-transform: uppercase; 
+}
+
+.signup-button:hover {
+    background-color: #FFD700;
+}
+
+/* --- CONTACT Button (contact.html) --- */
+.contact-button {
+    background-color: var(--color-yellow); 
+    color: #000;
+    border: none;
+    padding: 15px 40px; 
+    border-radius: 50px;
+    font-size: 20px; 
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+    text-transform: uppercase; 
+}
+
+.contact-button:hover {
+    background-color: #FFD700;
+}
+
+.arrow-icon {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+/* ---------------------------------------------------- */
+/* --- Styles for Sign Up/Log In Account Selection Page --- */
+/* ---------------------------------------------------- */
+
+.signup-page {
+    justify-content: flex-start; 
+    padding-top: 50px; 
+    flex-wrap: wrap; 
+}
+
+/* --- Sign Up Page Navbar (Back Button & Auth Options) --- */
+.signup-navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px; 
+    padding: 0 5%; 
+    box-sizing: border-box;
+    max-width: 1200px; 
+}
+
+.back-button {
+    background-color: var(--color-yellow);
+    color: #000;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #FFD700;
+}
+
+.auth-buttons {
+    display: flex;
+    background-color: var(--color-dark-blue); 
+    border-radius: 50px;
+    padding: 5px;
+}
+
+.auth-button {
+    text-decoration: none;
+    color: #FFF; 
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.active-auth-button {
+    background-color: var(--color-yellow);
+    color: #000;
+}
+
+/* --- Account Selection Section (Teacher/Student Cards) --- */
+.account-selection-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    gap: 40px; 
+    width: 100%;
+    max-width: 1000px; 
+    margin-bottom: 50px; 
+}
+
+.account-card {
+    border-radius: 20px; 
+    padding: 40px;
+    width: 45%; 
+    max-width: 450px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.account-card:hover {
+    transform: translateY(-5px); 
+}
+
+.teacher-card {
+    background-color: var(--color-yellow); 
+    color: var(--color-dark-blue); 
+}
+
+.student-card {
+    background-color: var(--color-dark-blue); 
+    color: #FFF; 
+}
+
+.card-title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+}
+
+.card-description {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    max-width: 300px; 
+}
+
+/* Specific button styles for cards */
+.card-signup-button {
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+    text-decoration: none; /* Make links look like buttons */
+    display: inline-block;
+}
+
+.teacher-signup-button {
+    background-color: var(--color-dark-blue); 
+    color: #FFF;
+}
+
+.teacher-signup-button:hover {
+    background-color: #0F123C; 
+}
+
+.student-signup-button {
+    background-color: var(--color-yellow); 
+    color: #000;
+}
+
+.student-signup-button:hover {
+    background-color: #FFD700;
+}
+
+/* ---------------------------------------------------- */
+/* --- LOGIN/SIGNUP NAV BAR ADJUSTMENTS (New Design) --- */
+/* ---------------------------------------------------- */
+
+.login-page-layout {
+    /* Ensures content starts higher up the page for login forms */
+    padding-top: 50px; 
+}
+
+.login-navbar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Push links to the right */
+    max-width: 1200px; 
+    margin-bottom: 80px; 
+    padding: 0; /* Remove top padding since it's now in .login-page-layout */
+}
+
+.login-navbar nav {
+    gap: 30px;
+}
+
+
+/* ---------------------------------------------------- */
+/* --- LOGIN FORM SPECIFIC STYLES (teacherlogin.html, studentlogin.html) --- */
+/* ---------------------------------------------------- */
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px; /* Max width of the form area */
+    padding: 0 20px;
+    margin-bottom: 50px;
+}
+
+/* Title Styling */
+.login-title {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 60px 0;
+    text-align: left;
+}
+
+.login-dark {
+    color: var(--color-dark-blue);
+}
+
+.login-highlight {
+    color: var(--color-yellow);
+}
+
+/* Form Layout (2-column grid) */
+.login-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 40px 80px; /* Vertical and horizontal gap */
+    width: 100%;
+    /* Align form to the top of the columns */
+    align-items: flex-start;
+}
+
+.form-group-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px; /* Spacing between rows/fields */
+}
+
+/* Reset margin on the last item in a column */
+.form-group-col .form-group-row:last-of-type {
+    margin-bottom: 0;
+}
+
+
+.form-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-form-label);
+    margin-bottom: 10px; /* Spacing between label and input */
+    letter-spacing: 0.5px;
+}
+
+.form-input-container {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: var(--color-light-gray); /* Lighter gray background */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center; 
+    height: 60px; /* Slightly taller inputs */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* subtle shadow for depth */
+}
+
+.form-input {
+    width: 100%;
+    border: none;
+    background-color: transparent; 
+    font-size: 16px;
+    color: var(--color-dark-blue);
+    outline: none; 
+    padding: 0; 
+}
+
+.form-input::placeholder {
+    color: #888; /* Slightly darker placeholder text */
+    font-weight: 400;
+}
+
+.password-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Style for the container that wraps the password input and the icon */
+.password-input-container {
+    padding-right: 50px; 
+    position: relative; /* Added relative position for icon placement */
+}
+.password-input-container .form-input {
+    padding-right: 0; /* Input inside container shouldn't have extra padding */
+}
+
+
+.password-toggle-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-dark-blue);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.forgot-password {
+    font-size: 16px;
+    color: var(--color-text-link);
+    text-decoration: none;
+    font-weight: 400;
+    margin-top: 10px;
+    width: fit-content;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-button-container {
+    /* This container holds the Log In button in the bottom right position */
+    display: flex;
+    justify-content: flex-end; /* Push button to the right */
+    align-items: flex-end; /* Push button to the bottom */
+    
+    /* Ensure this container takes up the remaining vertical space in the column */
+    flex-grow: 1; 
+    
+    /* Account for the height of the elements above it in the other column to roughly align the button visually */
+    /* This value was previously 150px to align the button based on the number of fields */
+    margin-top: 150px; 
+}
+
+.login-form-button {
+    background-color: var(--color-dark-blue);
+    color: #FFF;
+    border: none;
+    padding: 15px 40px; 
+    border-radius: 10px;
+    font-size: 20px; 
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase; 
+    transition: background-color 0.3s;
+    width: fit-content; 
+    height: 60px; /* Match the height of the inputs */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-decoration: none; /* Added for <a> tag buttons */
+    display: flex; /* Added for <a> tag buttons */
+    align-items: center; /* Added for <a> tag buttons */
+    justify-content: center; /* Added for <a> tag buttons */
+}
+
+.login-form-button:hover {
+    background-color: #0F123C;
+}
+
+/* New styles for upload buttons */
+.upload-button-container {
+    display: flex;
+    flex-direction: column; /* Stack if needed, but flex for horizontal alignment */
+    gap: 10px;
+    margin-top: 0px; /* Adjust spacing as needed */
+}
+
+.upload-button {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: var(--color-light-gray); /* Match input field background */
+    color: #888; /* Placeholder text color */
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 60px; /* Match input height */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #D3D3D3; /* Slightly darker on hover */
+}
+
+.uploaded-file-name {
+    font-size: 14px;
+    color: var(--color-dark-blue);
+    margin-top: 5px;
+    text-align: center;
+    display: block; /* Ensure it takes its own line */
+    word-break: break-all; /* Break long file names */
+}
+
+
+/* ---------------------------------------------------- */
+/* --- RESPONSIVE ADJUSTMENTS (Media Queries) --------- */
+/* ---------------------------------------------------- */
+
+@media (max-width: 900px) {
+    /* Login Form specific adjustments (Using refined values) */
+    .login-form {
+        grid-template-columns: 1fr; /* Stack columns vertically */
+        gap: 20px; 
+    }
+    
+    .login-form-container {
+        padding: 0 10px;
+    }
+    
+    .login-title {
+        font-size: 56px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .login-navbar {
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    
+    .login-button-container {
+        /* When stacked, center the button */
+        justify-content: center; 
+        align-items: center; 
+        margin-top: 30px; /* Added explicit spacing, using 30px for better alignment */
+        margin-bottom: 30px; /* New: added bottom margin for mobile view */
+    }
+    
+    .form-group-row {
+        margin-bottom: 20px; 
+    }
+    
+    /* Non-Login general adjustments (Keeping user's 900px block below 768px block) */
+
+}
+
+@media (max-width: 768px) {
+    /* General Hero Content Adjustments */
+    .hero-section {
+        max-width: 90%; 
+        padding: 0 10px; 
+        margin: 50px auto; 
+    }
+    
+    /* Navigation Adjustments (index/about/contact) */
+    .navbar {
+        padding: 20px 0; 
+    }
+    .navbar nav {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px; 
+    }
+
+    /* Text Reduction (index/about/contact) */
+    .tagline-main, .about-title, .contact-title {
+        font-size: 48px; 
+    }
+    
+    .about-description, .contact-description {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+    
+    /* Button Reduction (index/about/contact) */
+    .signup-button, .contact-button {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+
+    /* Sign Up Page Adjustments (signup.html/login.html) */
+    .signup-navbar {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    .back-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    .auth-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+    .auth-button {
+        flex-grow: 1; 
+        text-align: center;
+    }
+
+    .account-selection-section {
+        flex-direction: column; 
+        align-items: center;
+        gap: 30px;
+    }
+    .account-card {
+        width: 90%; 
+        max-width: 400px; 
+        padding: 30px;
+    }
+    .card-title {
+        font-size: 38px;
+    }
+    .card-description {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+    .card-signup-button {
+        font-size: 16px;
+        padding: 10px 25px;
+    }
+    
+    /* Mobile Adjustments for Login */
+    .login-title {
+        font-size: 40px;
+    }
+    
+}
+/* Re-adding the mobile query to ensure all smaller screens are covered */
+@media (max-width: 500px) {
+    /* Mobile Adjustments */
+    .login-title {
+        font-size: 40px;
+        text-align: center;
+    }
+    
+    .login-navbar nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .form-label {
+        font-size: 16px;
+    }
+    
+    .form-input-container, .login-form-button {
+        height: 50px; 
+    }
+    
+    .login-form-button {
+        width: 100%;
+    }
+}

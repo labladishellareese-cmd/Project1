@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLLIGO - Log In</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    
+    
+    <div class="page-content-wrapper signup-page">
+        <header class="signup-navbar">
+            <a href="index.html" class="back-button">&larr; Back</a> 
+            <div class="auth-buttons">
+                <!-- SIGN UP Tab: Links to the signup.html file -->
+                <a href="signup.html" class="auth-button" id="signup-tab">SIGN UP</a> 
+                <!-- LOG IN Tab: Active by default on this page -->
+                <a href="#" class="auth-button active-auth-button" id="login-tab">LOG IN</a>
+            </div>
+        </header>
+
+        <section class="account-selection-section">
+            <div class="account-card teacher-card">
+                <h2 class="card-title">TEACHER<br>ACCOUNT</h2>
+                <p class="card-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                </p>
+                <!-- Teacher Button: Links to the teacherlogin.html file -->
+                <a href="teacherlogin.html" class="card-signup-button teacher-signup-button" data-mode="login">LOG IN</a>
+            </div>
+
+            <div class="account-card student-card">
+                <h2 class="card-title">STUDENT<br>ACCOUNT</h2>
+                <p class="card-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                </p>
+                <!-- Student Button: Links to the studentlogin.html file -->
+                <a href="studentlogin.html" class="card-signup-button student-signup-button" data-mode="login">LOG IN</a>
+            </div>
+        </section>
+    </div>
+    
+   
+
+    <script>
+        // Set up references
+        const teacherCardButton = document.querySelector('.teacher-signup-button');
+        const studentCardButton = document.querySelector('.student-signup-button');
+        const loginTab = document.getElementById('login-tab');
+
+        // Function to set the auth mode (Log In is default for this page)
+        function setAuthMode(mode) {
+            // This page is statically the 'login' page, so this function primarily ensures buttons reflect this.
+            const buttonText = mode === 'signup' ? 'SIGN UP' : 'LOG IN';
+            
+            // Update button text
+            teacherCardButton.textContent = buttonText;
+            studentCardButton.textContent = buttonText;
+
+            // Update tab styles (though on this page, only the 'login' tab should be active)
+            if (mode === 'login') {
+                loginTab.classList.add('active-auth-button');
+                // The signup tab navigates away, so no need to manage its class here.
+            }
+        }
+        
+        // Ensure buttons say LOG IN on load
+        window.onload = function() {
+            setAuthMode('login');
+
+            // Prevent default action on the LOG IN tab since we are already on the LOG IN page.
+            loginTab.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Ensure buttons stay "LOG IN" text just in case.
+                setAuthMode('login');
+            });
+            
+            // The SIGN UP tab links directly to signup.html and needs no listener here.
+        };
+    </script>
+</body>
+</html>
