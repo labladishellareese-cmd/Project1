@@ -1,20 +1,20 @@
-/* Import a font similar to the one used in the design (e.g., Poppins or Montserrat) */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"); /* Added for password icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"); 
 
 
 :root {
-    /* Define colors from the design */
+    
     --color-yellow: #FFC72C; 
     --color-dark-blue: #1A237E; 
     --color-text-link: #424242; 
     --color-background-white: #F8F8F8; 
     --color-bar-black: #1A1A1A; 
-    --color-light-gray: #E0E0E0; /* For form inputs */
-    --color-form-label: #424242; /* For form labels */
+    --color-light-gray: #E0E0E0; 
+    --color-form-label: #424242; 
 }
 
-/* Base styles */
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -26,7 +26,7 @@ body {
     flex-direction: column; 
 }
 
-/* --- Top/Bottom Black Bars --- */
+
 .header-footer-bar {
     background-color: var(--color-bar-black);
     width: 100%;
@@ -34,16 +34,16 @@ body {
     flex-shrink: 0; 
 }
 
-/* --- Main Content Wrapper --- */
+
 .page-content-wrapper {
     flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    align-items: center; 
     padding: 0 5%; 
 }
 
-/* --- Navigation Bar (index, about, contact) --- */
+
 .navbar {
     display: flex;
     justify-content: center; 
@@ -68,7 +68,6 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hover Effect for non-active links */
 .nav-link:hover {
     background-color: var(--color-yellow);
     color: #000;
@@ -80,7 +79,7 @@ body {
     padding: 8px 15px;
 }
 
-/* --- Hero Section (Main Text Container for index/about/contact) --- */
+
 .hero-section {
     display: flex;
     flex-direction: column;
@@ -92,7 +91,7 @@ body {
     padding-bottom: 50px; 
 }
 
-/* --- Landing Page Text (index.html) --- */
+
 .tagline-small {
     font-size: 20px;
     color: var(--color-text-link);
@@ -113,7 +112,7 @@ body {
     margin: 0 0 40px 0;
 }
 
-/* --- About Page Specific Styles (about.html) --- */
+
 .about-title {
     font-size: 72px;
     color: var(--color-dark-blue);
@@ -130,7 +129,7 @@ body {
     margin: 0 auto 50px auto; 
 }
 
-/* --- Contact Page Specific Styles (contact.html) --- */
+
 .contact-title {
     font-size: 72px;
     color: var(--color-dark-blue); 
@@ -147,7 +146,7 @@ body {
     margin: 0 auto 50px auto; 
 }
 
-/* --- SIGN UP Button (index/about) --- */
+
 .signup-button {
     background-color: var(--color-yellow); 
     color: #000;
@@ -169,7 +168,7 @@ body {
     background-color: #FFD700;
 }
 
-/* --- CONTACT Button (contact.html) --- */
+
 .contact-button {
     background-color: var(--color-yellow); 
     color: #000;
@@ -197,17 +196,12 @@ body {
 }
 
 
-/* ---------------------------------------------------- */
-/* --- Styles for Sign Up/Log In Account Selection Page --- */
-/* ---------------------------------------------------- */
-
 .signup-page {
     justify-content: flex-start; 
     padding-top: 50px; 
     flex-wrap: wrap; 
 }
 
-/* --- Sign Up Page Navbar (Back Button & Auth Options) --- */
 .signup-navbar {
     width: 100%;
     display: flex;
@@ -259,7 +253,6 @@ body {
     color: #000;
 }
 
-/* --- Account Selection Section (Teacher/Student Cards) --- */
 .account-selection-section {
     display: flex;
     justify-content: center;
@@ -313,7 +306,6 @@ body {
     max-width: 300px; 
 }
 
-/* Specific button styles for cards */
 .card-signup-button {
     border: none;
     padding: 12px 30px;
@@ -323,7 +315,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     text-transform: uppercase;
-    text-decoration: none; /* Make links look like buttons */
+    text-decoration: none; 
     display: inline-block;
 }
 
@@ -345,22 +337,18 @@ body {
     background-color: #FFD700;
 }
 
-/* ---------------------------------------------------- */
-/* --- LOGIN/SIGNUP NAV BAR ADJUSTMENTS (New Design) --- */
-/* ---------------------------------------------------- */
-
 .login-page-layout {
-    /* Ensures content starts higher up the page for login forms */
+
     padding-top: 50px; 
 }
 
 .login-navbar {
     width: 100%;
     display: flex;
-    justify-content: flex-end; /* Push links to the right */
+    justify-content: flex-end; 
     max-width: 1200px; 
     margin-bottom: 80px; 
-    padding: 0; /* Remove top padding since it's now in .login-page-layout */
+    padding: 0; 
 }
 
 .login-navbar nav {
@@ -368,20 +356,15 @@ body {
 }
 
 
-/* ---------------------------------------------------- */
-/* --- LOGIN FORM SPECIFIC STYLES (teacherlogin.html, studentlogin.html) --- */
-/* ---------------------------------------------------- */
-
 .login-form-container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 1000px; /* Max width of the form area */
+    max-width: 1000px; 
     padding: 0 20px;
     margin-bottom: 50px;
 }
 
-/* Title Styling */
 .login-title {
     font-size: 72px;
     font-weight: 800;
@@ -398,13 +381,11 @@ body {
     color: var(--color-yellow);
 }
 
-/* Form Layout (2-column grid) */
 .login-form {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 40px 80px; /* Vertical and horizontal gap */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px 80px; 
     width: 100%;
-    /* Align form to the top of the columns */
     align-items: flex-start;
 }
 
@@ -416,10 +397,9 @@ body {
 .form-group-row {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px; /* Spacing between rows/fields */
+    margin-bottom: 30px; 
 }
 
-/* Reset margin on the last item in a column */
 .form-group-col .form-group-row:last-of-type {
     margin-bottom: 0;
 }
@@ -429,7 +409,7 @@ body {
     font-size: 18px;
     font-weight: 600;
     color: var(--color-form-label);
-    margin-bottom: 10px; /* Spacing between label and input */
+    margin-bottom: 10px; l
     letter-spacing: 0.5px;
 }
 
@@ -437,12 +417,12 @@ body {
     width: 100%;
     padding: 15px 20px;
     border-radius: 10px;
-    background-color: var(--color-light-gray); /* Lighter gray background */
+    background-color: var(--color-light-gray); 
     box-sizing: border-box;
     display: flex;
     align-items: center; 
-    height: 60px; /* Slightly taller inputs */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* subtle shadow for depth */
+    height: 60px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
 }
 
 .form-input {
@@ -456,7 +436,7 @@ body {
 }
 
 .form-input::placeholder {
-    color: #888; /* Slightly darker placeholder text */
+    color: #888; 
     font-weight: 400;
 }
 
@@ -465,13 +445,13 @@ body {
     width: 100%;
 }
 
-/* Style for the container that wraps the password input and the icon */
+
 .password-input-container {
     padding-right: 50px; 
-    position: relative; /* Added relative position for icon placement */
+    position: relative; 
 }
 .password-input-container .form-input {
-    padding-right: 0; /* Input inside container shouldn't have extra padding */
+    padding-right: 0; 
 }
 
 
@@ -499,16 +479,14 @@ body {
 }
 
 .login-button-container {
-    /* This container holds the Log In button in the bottom right position */
-    display: flex;
-    justify-content: flex-end; /* Push button to the right */
-    align-items: flex-end; /* Push button to the bottom */
     
-    /* Ensure this container takes up the remaining vertical space in the column */
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-end; 
+    
+    
     flex-grow: 1; 
     
-    /* Account for the height of the elements above it in the other column to roughly align the button visually */
-    /* This value was previously 150px to align the button based on the number of fields */
     margin-top: 150px; 
 }
 
@@ -524,32 +502,32 @@ body {
     text-transform: uppercase; 
     transition: background-color 0.3s;
     width: fit-content; 
-    height: 60px; /* Match the height of the inputs */
+    height: 60px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    text-decoration: none; /* Added for <a> tag buttons */
-    display: flex; /* Added for <a> tag buttons */
-    align-items: center; /* Added for <a> tag buttons */
-    justify-content: center; /* Added for <a> tag buttons */
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
 }
 
 .login-form-button:hover {
     background-color: #0F123C;
 }
 
-/* New styles for upload buttons */
+
 .upload-button-container {
     display: flex;
-    flex-direction: column; /* Stack if needed, but flex for horizontal alignment */
+    flex-direction: column; 
     gap: 10px;
-    margin-top: 0px; /* Adjust spacing as needed */
+    margin-top: 0px; 
 }
 
 .upload-button {
     width: 100%;
     padding: 15px 20px;
     border-radius: 10px;
-    background-color: var(--color-light-gray); /* Match input field background */
-    color: #888; /* Placeholder text color */
+    background-color: var(--color-light-gray); 
+    color: #888; 
     font-size: 16px;
     font-weight: 400;
     cursor: pointer;
@@ -557,13 +535,13 @@ body {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    height: 60px; /* Match input height */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    height: 60px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
     transition: background-color 0.3s ease;
 }
 
 .upload-button:hover {
-    background-color: #D3D3D3; /* Slightly darker on hover */
+    background-color: #D3D3D3; 
 }
 
 .uploaded-file-name {
@@ -571,19 +549,15 @@ body {
     color: var(--color-dark-blue);
     margin-top: 5px;
     text-align: center;
-    display: block; /* Ensure it takes its own line */
-    word-break: break-all; /* Break long file names */
+    display: block; 
+    word-break: break-all; 
 }
 
 
-/* ---------------------------------------------------- */
-/* --- RESPONSIVE ADJUSTMENTS (Media Queries) --------- */
-/* ---------------------------------------------------- */
-
 @media (max-width: 900px) {
-    /* Login Form specific adjustments (Using refined values) */
+    
     .login-form {
-        grid-template-columns: 1fr; /* Stack columns vertically */
+        grid-template-columns: 1fr; 
         gap: 20px; 
     }
     
@@ -603,30 +577,28 @@ body {
     }
     
     .login-button-container {
-        /* When stacked, center the button */
+        
         justify-content: center; 
         align-items: center; 
-        margin-top: 30px; /* Added explicit spacing, using 30px for better alignment */
-        margin-bottom: 30px; /* New: added bottom margin for mobile view */
+        margin-top: 30px; 
+        margin-bottom: 30px; 
     }
     
     .form-group-row {
         margin-bottom: 20px; 
     }
     
-    /* Non-Login general adjustments (Keeping user's 900px block below 768px block) */
-
 }
 
 @media (max-width: 768px) {
-    /* General Hero Content Adjustments */
+    
     .hero-section {
         max-width: 90%; 
         padding: 0 10px; 
         margin: 50px auto; 
     }
     
-    /* Navigation Adjustments (index/about/contact) */
+    
     .navbar {
         padding: 20px 0; 
     }
@@ -636,7 +608,7 @@ body {
         gap: 10px; 
     }
 
-    /* Text Reduction (index/about/contact) */
+    
     .tagline-main, .about-title, .contact-title {
         font-size: 48px; 
     }
@@ -646,13 +618,13 @@ body {
         padding: 0 10px;
     }
     
-    /* Button Reduction (index/about/contact) */
+    
     .signup-button, .contact-button {
         padding: 10px 25px;
         font-size: 16px;
     }
 
-    /* Sign Up Page Adjustments (signup.html/login.html) */
+    
     .signup-navbar {
         flex-direction: column;
         gap: 20px;
@@ -694,15 +666,15 @@ body {
         padding: 10px 25px;
     }
     
-    /* Mobile Adjustments for Login */
+    
     .login-title {
         font-size: 40px;
     }
     
 }
-/* Re-adding the mobile query to ensure all smaller screens are covered */
+
 @media (max-width: 500px) {
-    /* Mobile Adjustments */
+    
     .login-title {
         font-size: 40px;
         text-align: center;
