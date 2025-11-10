@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Sign Up</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body class="teacher-signup-page">
 
     <div class="page-content-wrapper">
         
-        <!-- Navigation Bar --><div class="form-navbar-container">
+        <div class="form-navbar-container">
             <div class="back-button-container">
                 <a href="signup.html" class="auth-button" style="background-color: var(--color-yellow); color: var(--color-dark-blue); font-weight: 600;">
                     <i class="fas fa-arrow-left"></i> Back
@@ -24,16 +24,16 @@
             </nav>
         </div>
         
-        <!-- Form Content Area --><div class="form-main-content">
+        <div class="form-main-content">
             
-            <!-- Title Section --><h1 class="main-title">
+            l<h1 class="main-title">
                 <span style="color: var(--color-dark-blue);">TEACHER</span>
                 <span style="color: var(--color-yellow);">SIGN-UP</span>
             </h1>
 
-            <!-- Registration Form Structure --><form class="signup-form">
+            <form class="signup-form">
                 
-                <!-- E-mail Address --><div class="form-group-col">
+                l<div class="form-group-col">
                     <div class="form-group-row">
                         <label for="email" class="form-label">E-mail Address *</label>
                         <div class="form-input-container">
@@ -42,7 +42,7 @@
                     </div>
                 </div>
 
-                <!-- ID Number --><div class="form-group-col">
+                l<div class="form-group-col">
                     <div class="form-group-row">
                         <label for="idNumber" class="form-label">ID Number *</label>
                         <div class="form-input-container">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
 
-                <!-- Password --><div class="form-group-col">
+                <div class="form-group-col">
                     <div class="form-group-row">
                         <label for="password" class="form-label">Password *</label>
                         <div class="form-input-container password-input-container">
@@ -61,17 +61,17 @@
                     </div>
                 </div>
 
-                <!-- Upload ID (with Camera/File options) --><div class="form-group-col upload-group-col">
+                <div class="form-group-col upload-group-col">
                     <div class="form-group-row">
                         <label for="uploadId" class="form-label">Upload ID</label>
                         <div class="form-input-container upload-button-container" id="uploadIdButton">
                             <span class="upload-text">Upload here</span>
-                            <!-- Hidden file input that will be triggered by JS --><input type="file" id="actualUploadIdInput" accept="image/*, application/pdf" capture="environment" class="hidden-file-input">
+                            <input type="file" id="actualUploadIdInput" accept="image/*, application/pdf" capture="environment" class="hidden-file-input">
                         </div>
                     </div>
                 </div>
 
-                <!-- NEXT Button (positioned via grid/flexbox) --><div class="login-button-container form-action-button-grid-cell">
+                <div class="login-button-container form-action-button-grid-cell">
                     <a href="teachernextstep.html" class="login-form-button">
                         NEXT <i class="fas fa-arrow-right arrow-icon"></i>
                     </a>
@@ -83,10 +83,10 @@
     </div>
 
     <script>
-        // Password Toggle Function (re-included for completeness)
+        
         function togglePasswordVisibility(id) {
             const input = document.getElementById(id);
-            const icon = input.nextElementSibling; // Assuming icon is right after input
+            const icon = input.nextElementSibling; 
             if (input.type === 'password') {
                 input.type = 'text';
                 icon.classList.remove('fa-eye');
@@ -98,25 +98,25 @@
             }
         }
 
-        // --- Upload ID Logic (Camera/File Selector) ---
+        
         document.addEventListener('DOMContentLoaded', () => {
             const uploadIdButton = document.getElementById('uploadIdButton');
             const actualUploadIdInput = document.getElementById('actualUploadIdInput');
             const uploadTextSpan = uploadIdButton.querySelector('.upload-text');
 
             uploadIdButton.addEventListener('click', () => {
-                // Trigger the hidden file input
+                
                 actualUploadIdInput.click();
             });
 
             actualUploadIdInput.addEventListener('change', (event) => {
                 if (event.target.files.length > 0) {
                     const fileName = event.target.files[0].name;
-                    uploadTextSpan.textContent = fileName; // Display selected file name
-                    // Here you would typically upload the file via AJAX
+                    uploadTextSpan.textContent = fileName; 
+                    
                     console.log('Selected file for upload:', fileName);
                 } else {
-                    uploadTextSpan.textContent = 'Upload here'; // Reset if no file selected
+                    uploadTextSpan.textContent = 'Upload here'; 
                 }
             });
         });
