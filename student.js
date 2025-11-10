@@ -13,7 +13,7 @@ const startScanBtn = document.getElementById('start-scan');
 
 let html5QrcodeScanner = null;
 
-// ----- Auth buttons -----
+
 sSignup.onclick = () => {
   signUp(sEmail.value, sPassword.value, 'student', sName.value)
     .then(() => alert('Student account created.'))
@@ -25,7 +25,7 @@ sSignin.onclick = () => signIn(sEmail.value, sPassword.value)
 
 sSignout.onclick = () => signOut();
 
-// ----- Update UI on auth change -----
+
 auth.onAuthStateChanged(async user => {
   if (!user) {
     sCurrent.innerText = 'Not signed in';
@@ -44,10 +44,10 @@ auth.onAuthStateChanged(async user => {
   }
 });
 
-// ----- Start camera when button clicked -----
+
 startScanBtn.onclick = startScanner;
 
-// ----- QR scanner functions -----
+
 function startScanner() {
   if (html5QrcodeScanner) return;
 
@@ -55,7 +55,7 @@ function startScanner() {
 
   Html5Qrcode.getCameras().then(cameras => {
     if (cameras && cameras.length) {
-      // pick back camera if available
+      
       const camera = cameras.find(cam => cam.label.toLowerCase().includes('back')) || cameras[0];
       html5QrcodeScanner.start(
         camera.id,
@@ -82,7 +82,7 @@ function stopScanner() {
 }
 
 function qrCodeErrorCallback(err) {
-  // ignore minor scan errors
+  
 }
 
 async function qrCodeSuccessCallback(decodedText) {
