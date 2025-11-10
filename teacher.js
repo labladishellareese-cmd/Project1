@@ -1,6 +1,4 @@
-// teacher.js
 
-// Grab HTML elements
 const tEmail = document.getElementById('t-email');
 const tPassword = document.getElementById('t-password');
 const tName = document.getElementById('t-name');
@@ -16,7 +14,6 @@ const sessionIdEl = document.getElementById('session-id');
 const classNameInput = document.getElementById('class-name');
 const attendanceList = document.getElementById('attendance-list');
 
-// ----- Auth Buttons -----
 tSignup.onclick = () => {
   signUp(tEmail.value, tPassword.value, 'teacher', tName.value)
     .then(() => alert('Teacher account created.'))
@@ -28,7 +25,6 @@ tSignin.onclick = () => signIn(tEmail.value, tPassword.value)
 
 tSignout.onclick = () => signOut();
 
-// ----- Update UI on auth change -----
 auth.onAuthStateChanged(async user => {
   if (!user) {
     tCurrent.innerText = 'Not signed in';
@@ -44,7 +40,6 @@ auth.onAuthStateChanged(async user => {
   if (userDoc.role === 'teacher') sessionArea.style.display = 'block';
 });
 
-// ----- Generate session ID -----
 function generateSessionId() {
   return 's_' + Date.now().toString(36) + '_' + Math.random().toString(36).substring(2,8);
 }
@@ -52,7 +47,6 @@ function generateSessionId() {
 let currentSessionId = null;
 let unsubscribeAttendance = null;
 
-// ----- Generate QR & save session -----
 generateBtn.onclick = async () => {
   const cls = classNameInput.value || 'Class';
   const teacher = auth.currentUser;
@@ -61,7 +55,7 @@ generateBtn.onclick = async () => {
   const sessionId = generateSessionId();
   currentSessionId = sessionId;
 
-  // Save session in Firestore
+
   await db.collection('sessions').doc(sessionId).set({
     sessionId,
     className: cls,
@@ -70,7 +64,7 @@ generateBtn.onclick = async () => {
     createdAt: firebase.firestore.FieldValue.serverTimestamp()
   });
 
-  // Create QR code (JSON payload with sessionId)
+  
   const payload = { sessionId };
   qrcodeDiv.innerHTML = '';
   new QRCode(qrcodeDiv, {
@@ -83,7 +77,7 @@ generateBtn.onclick = async () => {
   listenAttendance(sessionId);
 };
 
-// ----- Listen to live attendance -----
+
 function listenAttendance(sessionId) {
   if (unsubscribeAttendance) unsubscribeAttendance();
 
